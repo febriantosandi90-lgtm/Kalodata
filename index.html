@@ -71,6 +71,7 @@ function login() {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function() {
       alert("LOGIN BERHASIL");
+      window.location.href = "dashboard.html";   
     })
     .catch(function(error) {
       alert("ERROR: " + error.message);
@@ -80,4 +81,5 @@ function login() {
 
 </body>
 </html>
+
 

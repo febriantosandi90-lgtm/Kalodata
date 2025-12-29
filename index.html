@@ -53,6 +53,27 @@ nav{display:flex;justify-content:space-between;align-items:center}
 </script>
 
 </head>
+  <script>
+function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  auth.signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      const userEmail = userCredential.user.email;
+
+      if (userEmail === "admin@kalodata.com") {
+        window.location.href = "dashboard-admin.html";
+      } else {
+        window.location.href = "dashboard-user.html";
+      }
+    })
+    .catch((error) => {
+      alert("Login gagal: " + error.message);
+    });
+}
+</script>
+
 <body>
 
 <!-- LANDING -->
@@ -160,6 +181,7 @@ function login() {
 </script>
 </body>
 </html>
+
 
 
 
